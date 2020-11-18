@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<head>
+<title>
+add form
+</title>
+</head>
+<body>
+
+
+
+<form  method="post" enctype="multipart/form-data" action="{% url 'blogadded' %}">
+{% csrf_token %}
+
+
+
+<table>
+<tr>
+<td><lable for="cate" >category</lable></td>
+<td><select type="text" name="category" id="cate">
+ <option><a href="">add new<a></option>
+ {% for i in category %}
+ <option>{{i.categories}}</option>
+{% endfor %}
+</td>
+</tr>
+<tr>
+<td><lable for="head" >heading</lable></td>
+<td><input type="text" name="heading" id="head"></td>
+</tr>
+<tr>
+<td><lable for="img" >thumb</lable></td>
+<td><input type="file" name="thumb" id="img"></td>
+</tr>
+<tr>
+<td><lable for="disc" >discription</lable></td>
+<td><textarea name="disc" id="disc"></textarea></td>
+</tr>
+<tr>
+<td><lable for="footer" >footer</lable></td>
+<td><input type="text" name="footer" id="footer"></td>
+</tr>
+
+
+</table>
+
+<input type="submit" name="add">
+</form>
+</body>
